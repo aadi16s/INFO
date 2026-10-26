@@ -19,8 +19,8 @@ def home():
 def send_welcome(message):
   bot.reply_to(
       message,
-      "Namaste! Mujhe koi bhi mobile number bhejiye, main uski details API se"
-      " nikal kar launga.",
+      "Namaste! Give me any phone number"
+      " i will fetch it for you.",
   )
 
 
@@ -30,15 +30,15 @@ def get_number_info(message):
 
   if not query_number.isdigit():
     bot.reply_to(
-        message, "Kripya ek valid mobile number bhejiye (sirf digits mein)."
+        message, "give an valid number(add a valid number)."
     )
     return
 
   bot.reply_to(
-      message, "🔍 Number search kiya ja raha hai, kripya intezaar karein..."
+      message, "🔍 Fetching number for you...."
   )
 
-  api_url = f"https://osint-apis-hub.onrender.com/api/num-info?key=Demo&q={query_number}"
+  api_url = f"https://codex-num2info-v69.kesug.com/api.php?key=HarshitK-&num="
 
   try:
     response = requests.get(api_url, timeout=15)
